@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha512-c93ifPoTvMdEJH/rKIcBx//AL1znq9+4/RmMGafI/vnTFe/dKwnn1uoeszE2zJBQTS1Ck5CqSBE+34ng2PthJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./temp.css">
+    <title>Temp</title>
+</head>
+<body>
+
+    <div class="circuit-container" id="line">
+        <div class="bulb">
+            <i class="fas fa-lightbulb light"></i>
+        </div>
+        <div class="swittch">
+            <i onclick="switched(this)" class="fas fa-random" id="switch"></i>
+        </div>
+        <div class="battery">
+            <i class="fas fa-car-battery"></i>
+        </div>
+        <div class="arrow angle-down">
+            <i class="fas fa-long-arrow-alt-down"></i>
+        </div>
+        <div class="arrow angle-right"></div>
+        <div class="arrow angle-right1"></div>
+        <div class="arrow angle-left"></div>
+        <div class="arrow angle-left1"></div>
+    </div>
+
+    <!-- <div class="img-container">
+        <div class="container img1_container" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="south_north.jpg" draggable="true" ondragstart="drag(event)" id="drag1" alt="">
+        </div>
+
+        <div class="container img2_container" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="east_west.png" id="drag2" width="0" height="0" alt="">
+        </div>
+    </div>
+     -->
+
+    <img src="./south_north.jpg" id="ball" alt="">
+
+    <script src="./temp.js"></script>
+</body>
+</html>

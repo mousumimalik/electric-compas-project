@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #needle {
+            height:5px;
+            background-color:#808080;
+            width:100px;
+            margin-top:100px;
+
+            /* Initial value for rotate is needed for transition to work */
+            transform:rotate(0);  
+
+            /* CSS transition creates smooth effect */
+            transition:all 1.5s;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <input type="text" id="angle" value="20"><button type="button" id="btnGo">Go!</button>
+    <div id="needle"></div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+
+        // Get references to DOM elements
+        var input = document.getElementById("angle");
+        var btn = document.getElementById("btnGo");
+        var needle = document.getElementById("needle");
+
+        // Set up click event handler
+        btn.addEventListener("click", start_animation);
+
+        // Storage for the previous angle
+        var lastAngle = "";
+
+        function start_animation(){ 
+            // Update the total angle needed
+            lastAngle = +lastAngle + +input.value;
+            
+            // For testing:
+            console.clear()
+            console.log("Current total angle: " + lastAngle);
+
+            // Move the needle:
+            needle.style.transform = "rotate(" + lastAngle + "deg)";
+        }
+
+    </script>
+</body>
+</html>

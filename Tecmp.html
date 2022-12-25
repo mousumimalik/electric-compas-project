@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .spin {
+            display: block;
+            width: 200px;
+            height: 10px;
+            background: red;
+        }
+
+@-moz-keyframes spin {
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    to {transform:rotate(360deg);}
+}
+
+.spin {
+    animation: spin 1000ms linear infinite;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <span class="fa fa-spinner spin"></span>
+
+
+
+
+<script>
+
+
+
+
+function keydown(event){
+    if(event.which == 16) document.body.className = "slowmotion";
+}
+function keyup(event){
+    document.body.className = "";
+}
+if (window.addEventListener) {
+    window.addEventListener('keydown', keydown, false); 
+    window.addEventListener('keyup', keyup, false); 
+} else if (window.attachEvent)  {
+    window.attachEvent('keydown', keydown);
+    window.attachEvent('keyup', keyup);
+}
+
+
+
+
+
+
+
+</script>
+    
+</body>
+</html>

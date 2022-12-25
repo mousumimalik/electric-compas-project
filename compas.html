@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        #mydiv {
+        position: absolute;
+        z-index: 9;
+        background-color: #2196F3;
+        text-align: center;
+        border: 1px solid #d3d3d3;  
+        padding: 10px;  
+        cursor: move;  
+        color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    
+
+    <div id="mydiv">
+        Click here to move
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+ 
+            var oldX = 0, newX = 0; // for storing X (horizontal) positions
+            var element = document.getElementById("mydiv"); // The element you want to drag
+
+            // We do the dragging here
+            function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            newX = oldX - e.clientX; // to calculate how much we have moved
+            oldX = e.clientX; // store current value to use for next move
+            element.style.left = (element.offsetLeft - newX) + "px"; // update left position
+            }
+
+            // we do this so there is not multiple event handlers
+            function closeDragElement() {
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+
+            // when mouse down on element attach mouse move and mouse up for document
+            // so that if mouse goes outside element still drags
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                oldX = e.clientX; // store current value to use for mouse move calculation
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+            }
+
+            element.onmousedown = dragMouseDown;
+
+    </script>
+</body>
+</html>

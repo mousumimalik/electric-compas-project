@@ -1,0 +1,227 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circuit-container {
+  width: 50vw;
+  height: 50vh;
+  border: 10px solid black;
+  position: relative;
+  stroke-dasharray: 91 !important;
+  stroke-dashoffset: 91;
+  animation: a 3s linear forwards;
+}
+
+.circuit-container .light {
+  font-size: 30px;
+  color: gray;
+  padding: 10px;
+  background: #FFFF;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.circuit-container .bulb {
+  position: absolute;
+  top: -10%;
+  left: 40%;
+}
+
+.circuit-container .swittch {
+  position: absolute;
+  top: 46%;
+  left: -4%;
+}
+
+.circuit-container .swittch .fa-random {
+  font-size: 30px;
+  color: red;
+  padding: 10px;
+  background: #FFFF;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.circuit-container .battery {
+  position: absolute;
+  top: 93%;
+  left: 40%;
+}
+
+.circuit-container .battery .fa-car-battery {
+  font-size: 30px;
+  color: black;
+  padding: 10px;
+  background: #FFFF;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: green;
+}
+
+.circuit-container .angle-down {
+  position: absolute;
+  top: 28%;
+  left: 99%
+}
+
+.circuit-container .angle-right {
+  position: absolute;
+  top: -6%;
+  left: -1%;
+}
+
+.circuit-container .angle-right1 {
+  position: absolute;
+  top: -6%;
+  left: 80%;
+}
+
+.circuit-container .angle-left {
+  position: absolute;
+  top: 97%;
+  left: 5%;
+}
+
+.circuit-container .angle-left1 {
+  position: absolute;
+  top: 97%;
+  left: 70%;
+}
+
+.arrow {
+  width:100px;
+  height:30px;
+  display: none;
+}
+
+.angle-right:before {
+  content: "";
+  background: yellow;
+  width:15px;
+  clip-path: polygon(0 10px,calc(100% - 15px) 10px,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,calc(100% - 15px) calc(100% - 10px),0 calc(100% - 10px));
+  animation: right 1.5s infinite linear;
+}
+
+@keyframes right {
+  90%,100% {
+      flex-grow: 1
+  }
+}
+
+.angle-right1:before {
+  content: "";
+  background: yellow;
+  width:15px;
+  clip-path: polygon(0 10px,calc(100% - 15px) 10px,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,calc(100% - 15px) calc(100% - 10px),0 calc(100% - 10px));
+  animation: right1 1.5s infinite linear;
+}
+
+@keyframes right1 {
+  90%,100% {
+      flex-grow: 1
+  }
+}
+
+.angle-left:before {
+  content: "";
+  flex: 1;
+  margin: 0 5px;
+  background: yellow;
+  clip-path: polygon(0 10px,calc(100% - 15px) 10px,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,calc(100% - 15px) calc(100% - 10px),0 calc(100% - 10px));
+  animation: left 1.5s infinite  linear;
+}
+
+.angle-left1:before {
+  content: "";
+  flex: 1;
+  margin: 0 5px;
+  background: yellow;
+  clip-path: polygon(0 10px,calc(100% - 15px) 10px,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,calc(100% - 15px) calc(100% - 10px),0 calc(100% - 10px));
+  animation: left 1.5s infinite  linear;
+}
+
+@keyframes left {
+  0%  {
+      transform: scaleX(var(--s,-1)) translate(-4px);
+      flex-grow: 1;
+  }
+  100%{
+      transform: scaleX(var(--s,-1)) translate( 4px);
+      flex-grow: 0;
+  }
+}
+
+@keyframes left1 {
+  0%  {
+      transform: scaleX(var(--s,-1)) translate(-4px);
+      flex-grow: 1;
+  }
+  100%{
+      transform: scaleX(var(--s,-1)) translate( 4px);
+      flex-grow: 0;
+  }
+}
+
+i {
+  font-size: 60px;
+  color: yellow;
+}
+
+.angle-down {
+  text-align: center;
+  margin: 8% 0;
+  -moz-animation: angle-down 2s infinite;
+  -webkit-animation: angle-down 2s infinite;
+  animation: angle-down 2s infinite; 
+}
+
+@keyframes angle-down {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+    flex-grow: 1;
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.img-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.container {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  margin: 10px;
+}
+
+.container img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+.container #drag2 {
+  /* display: none; */
+}
+
